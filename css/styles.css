@@ -1,0 +1,45 @@
+:root {
+    --mainColor: #333333;
+    --accentColor: #3D3D3D;
+    --darkAccent: #2D2D2D;
+    --textColor: white;
+}
+
+body {
+    background-color: var(--accentColor);
+    color: var(--textColor)
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--textColor);
+}
+
+button {
+    border: 1px solid var(--textColor);
+    background-color: var(--accentColor);
+    margin: 10px;
+    padding: 1em;
+    color: var(--textColor);
+    font-weight: bold;
+    font-size: large;
+}
+
+button:hover {
+    background-color: var(--darkAccent);
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#map {
+    margin: 0 auto;
+    grid: 2/2;
+}
