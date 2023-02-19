@@ -1,4 +1,4 @@
-:root {
+body {
     --mainColor: #333333;
     --accentColor: #3D3D3D;
     --darkAccent: #2D2D2D;
@@ -7,7 +7,8 @@
 
 body {
     background-color: var(--accentColor);
-    color: var(--textColor)
+    color: var(--textColor);
+    transition: background-color, 500ms;
 }
 
 #weather {
@@ -27,10 +28,10 @@ header {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--textColor);
-    
+    height: 10em;
 }
 
-button {
+button.rand {
     border: 1px solid var(--textColor);
     background-color: var(--accentColor);
     margin: 10px;
@@ -39,6 +40,7 @@ button {
     font-weight: bold;
     font-size: large;
     cursor: pointer;
+    align-self: center;
     transition: background-color, 500ms;
 }
 
@@ -46,10 +48,56 @@ button:hover {
     background-color: var(--darkAccent);
 }
 
+#theme {
+    opacity: 0;
+}
+
+#theme + label {
+    margin: 10px;
+    transition: font-size, 500ms;
+}
+
+#theme + label:hover {
+    filter: brightness(80%);
+    font-size: 25px;
+}
+
+#theme:checked + label{
+    color: #000;
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-timing-function: linear;
+}
+
+body:has(*>#theme:checked) {
+    --textColor: black;
+    --accentColor: white;
+    --mainColor: gray;
+    --darkAccent: #eee;
+}
 
 main {
     display: flex;
     flex-direction: column;
+}
+
+@keyframes spin {
+    20% {
+        transform: rotate(90deg);
+    }
+
+    40% {
+        transform: rotate(180deg);
+    }
+
+    80% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+    
 }
 
 
@@ -66,4 +114,7 @@ main {
 
 #game {
     display: none;
+    background: radial-gradient(circle, var(--mainColor) 0%, var(--accentColor) 90%);
+    margin: 1em;
+    box-shadow: -5px -5px 10px var(--mainColor);
 }

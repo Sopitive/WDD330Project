@@ -80,6 +80,7 @@ function setWeather() {
     document.querySelector("#game").style.display = "none";
     if (weatherState == "Snow") {
         startGame();
+        canvas.scrollIntoView();
         drawSnow(canvas);
         document.querySelector("#game").style.display = "block";
     } else if (weatherState == "Rain") {
@@ -129,10 +130,10 @@ canvas.addEventListener("click", (event) =>{
 
     const rect = canvas.getBoundingClientRect();
     mouseX = event.clientX - rect.width;
-    mouseY = event.clientY - rect.height;
+    mouseY = (event.clientY - rect.height);
 
     const dx = mouseX + snowball.x + 400;
-    const dy = mouseY - snowball.y;
+    const dy = (mouseY - snowball.y);
     console.log(dx);
     let angle = Math.atan2(dy, dx);
 

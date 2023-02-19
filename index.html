@@ -9,6 +9,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLFqZDWn2X9QS5lXHWec1-kJdVqO4vHQk&callback=initMap" async defer></script>
     <script src="js/script.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -16,12 +17,14 @@
         <h1>
             Weather Data Info
         </h1>
+        <input id="theme" type="checkbox">
+        <label class="fa fa-adjust" for="theme"></label>
     </header>
 
     <main>
 
          <div id="map" style="width:100%; height:400px;"></div>
-         <button>Random Location</button>
+         <button class="rand">Random Location</button>
 
          <div id="weather">
             <div id="temp"></div>
