@@ -12,6 +12,9 @@ body {
 }
 
 #weather {
+    font-size: larger;
+    line-height: 5em;
+    font-weight: bold;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -20,6 +23,8 @@ body {
     width: 500px;
     border: 1px solid var(--textColor);
     align-self: center;
+    background-color: var(--darkAccent);
+    color: var(--textColor);
 }
 
 header {
